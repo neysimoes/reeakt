@@ -1,6 +1,10 @@
 # reeakt: A React.js boilerplate to awesome web applications
 
 <div align="center">
+  <img src="https://cloud.githubusercontent.com/assets/1680157/25194345/8788424e-2510-11e7-91cb-3a04b1bb4e5b.png" alt="Logo reeakt">
+</div>
+
+<div align="center">
   <a href="https://dependencyci.com/github/obetomuniz/reeakt">
     <img src="https://dependencyci.com/github/obetomuniz/reeakt/badge?maxAge=0" alt="Dependency Status" />
   </a>
