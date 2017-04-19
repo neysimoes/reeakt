@@ -1,4 +1,4 @@
-# Reeakt: A React.js boilerplate to awesome web applications
+# reeakt: A React.js boilerplate to awesome web applications
 
 <div align="center">
   <a href="https://dependencyci.com/github/obetomuniz/reeakt">

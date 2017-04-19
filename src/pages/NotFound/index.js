@@ -1,16 +1,12 @@
 import React from 'react';
 import Helmet from 'react-helmet';
+import { NotFoundTitle } from '~pages/NotFound/UI';
 
 const NotFound = () => {
-  const pageTitle = '404 not found - My App';
-
   return (
-    <div className="container">
-      <Helmet title={pageTitle} />
-      <div>
-        <h1>404</h1>
-        <p>This is not the web page you are looking for.</p>
-      </div>
+    <div>
+      <Helmet title={'404 not found - reeakt'} />
+      <NotFoundTitle>Oops... 404 Page!</NotFoundTitle>
     </div>
   );
 };

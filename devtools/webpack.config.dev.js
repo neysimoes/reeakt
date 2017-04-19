@@ -84,7 +84,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Reeakt',
+      title: 'reeakt',
       isWebpack: true,
       hash: true,
       template: devtoolsPath + 'templates/index.hbs',

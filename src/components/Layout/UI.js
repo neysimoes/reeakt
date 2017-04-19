@@ -1,22 +1,40 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
+export const Wrapper = styled.div`
+  width: 800px;
+  margin: 0 auto;
+`;
+
+export const Nav = styled.ul`
+  padding: 0;
+  margin: 0 0 40px;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+`;
+
+export const NavItem = styled.li`
+  display: block;
+  flex: 1;
+`;
+
 export const NavLinkStyled = styled(NavLink)`
-  color: red;
-  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 20px 0;
+  border-bottom: 1px solid transparent;
+  font-size: 18px;
   &.active {
-    color: paleturquoise;
+    border-bottom: 1px solid #000;
   }
 `;
 
-export const ImageList = styled.div`
-  width: 600px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
+export const Logo = styled.img`
+  margin-bottom: 40px;
+  width: 100%;
 `;
 
-export const ImageStyled = styled.img`
-  width: 20%;
-  display: block;
+export const Content = styled.section`
+
 `;
