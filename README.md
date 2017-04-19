@@ -1,7 +1,8 @@
 # Reeakt: A React.js boilerplate to awesome web applications
 
 [![Dependency Status](https://dependencyci.com/github/obetomuniz/reeakt/badge?maxAge=0)](https://dependencyci.com/github/obetomuniz/reeakt)
-[![Build Status](https://travis-ci.org/obetomuniz/reeakt.svg?branch=master)](https://travis-ci.org/obetomuniz/reeakt)
+[![Build Status](https://travis-ci.org/obetomuniz/reeakt.svg?maxAge=0&branch=master)](https://travis-ci.org/obetomuniz/reeakt)
+[![Coverage Status](https://coveralls.io/repos/github/obetomuniz/reeakt/badge.svg?maxAge=0&branch=master)](https://coveralls.io/github/obetomuniz/reeakt?branch=master)
 
 ## Installation
 ````
