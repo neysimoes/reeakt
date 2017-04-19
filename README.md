@@ -1,8 +1,32 @@
 # Reeakt: A React.js boilerplate to awesome web applications
 
-[![Dependency Status](https://dependencyci.com/github/obetomuniz/reeakt/badge?maxAge=0)](https://dependencyci.com/github/obetomuniz/reeakt)
-[![Build Status](https://travis-ci.org/obetomuniz/reeakt.svg?maxAge=0&branch=master)](https://travis-ci.org/obetomuniz/reeakt)
-[![Coverage Status](https://coveralls.io/repos/github/obetomuniz/reeakt/badge.svg?maxAge=0&branch=master)](https://coveralls.io/github/obetomuniz/reeakt?branch=master)
+<div align="center">
+  <a href="https://dependencyci.com/github/obetomuniz/reeakt">
+    <img src="https://dependencyci.com/github/obetomuniz/reeakt/badge?maxAge=0" alt="Dependency Status" />
+  </a>
+  <a href="https://travis-ci.org/obetomuniz/reeakt">
+    <img src="https://travis-ci.org/obetomuniz/reeakt.svg?maxAge=0&branch=master" alt="Build Status" />
+  </a>
+  <a href="https://coveralls.io/github/obetomuniz/reeakt?branch=master">
+    <img src="https://coveralls.io/repos/github/obetomuniz/reeakt/badge.svg?maxAge=0&branch=master" alt="Test Coverage" />
+  </a>
+</div>
+
+## Tooling
+
+- SSR (Server-Side Rendering)
+- react
+- react-router v4
+- redux
+- redux-saga
+- styled-components v2
+- webpack 2
+- webpack-bundle-analyzer
+- jest & enzyme
+- eslint
+- ducks _(a modern and optimized way to work with redux structure)_
+- axios
+- express
 
 ## Installation
 ````
@@ -10,20 +34,32 @@ $ git clone https://github.com/obetomuniz/reeakt.git
 $ yarn install
 ````
 
-## Running Dev Mode (Development)
+## CLI
+
+#### Run the Development Mode
 ````
 $ npm run dev
 ````
 
-## Running Production Mode (Development)
+#### Run the Production Mode
 ````
 $ npm run prod
 ````
 
-## Building and Running Production Server
+#### Build and Run the Production Server
 ````
 $ npm run build
 $ npm run start
+````
+
+#### Run the tests
+````
+$ npm run test
+````
+
+#### Run the webpack-bundle-analyzer
+````
+$ npm run webpack-bundle-analyzer
 ````
 
 ## License
