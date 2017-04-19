@@ -11,12 +11,17 @@ const store = configureStore({}, history);
 
 describe('<Tests />', () => {
   it('should render an <Tests> tag', () => {
+    const mockedState = {
+      isLoading: true,
+      error: null,
+      tests: {}
+    };
     const wrapper = mount(
       <Provider store={store}>
         <Tests />
       </Provider>
     );
 
-    expect(wrapper.find('pre').text()).toEqual('[]');
+    expect(JSON.parse(wrapper.find('pre').text())).toEqual(mockedState);
   });
 });

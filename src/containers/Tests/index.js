@@ -5,11 +5,11 @@ import { getTests } from '~reducers/Tests/actions';
 import { selectTests } from '~reducers/Tests/selectors';
 
 @connect(state => ({ tests: selectTests(state) }))
-export default class Home extends Component {
+export default class Tests extends Component {
   static propTypes = {
     dispatch: PropTypes.func.isRequired,
     getTests: PropTypes.func,
-    tests: PropTypes.array
+    tests: PropTypes.object
   }
 
   componentWillMount() {

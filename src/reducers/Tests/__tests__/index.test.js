@@ -8,7 +8,7 @@ describe('testsReducer', () => {
     state = {
       isLoading: false,
       error: null,
-      tests: []
+      tests: {}
     };
   });
 
@@ -21,7 +21,7 @@ describe('testsReducer', () => {
     const expectedResult = {
       isLoading: true,
       error: null,
-      tests: []
+      tests: {}
     };
 
     expect(testsReducer(state, getTests())).toEqual(expectedResult);
@@ -43,7 +43,7 @@ describe('testsReducer', () => {
     const expectedResult = {
       isLoading: false,
       error: fixture,
-      tests: []
+      tests: {}
     };
 
     expect(testsReducer(state, getTestsFailure(fixture))).toEqual(expectedResult);

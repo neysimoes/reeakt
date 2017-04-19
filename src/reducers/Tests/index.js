@@ -3,7 +3,7 @@ import { FETCH_TESTS_REQUEST, FETCH_TESTS_SUCCESS, FETCH_TESTS_FAILURE } from '~
 export const initialState = {
   isLoading: false,
   error: null,
-  tests: []
+  tests: {}
 };
 
 export default (state = initialState, action) => {
