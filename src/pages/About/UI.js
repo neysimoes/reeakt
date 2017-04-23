@@ -23,7 +23,7 @@ export const Techs = styled.ul`
 `;
 
 export const Tech = styled.li`
-  margin-bottom: 8px;
+  margin-bottom: 6px;
   font-size: 16px;
 `;
 

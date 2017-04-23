@@ -15,6 +15,8 @@ const About = () => {
           <Tech>react-router v4</Tech>
           <Tech>redux</Tech>
           <Tech>redux-saga</Tech>
+          <Tech>immutable.js</Tech>
+          <Tech>redux-immutable</Tech>
           <Tech>styled-components v2</Tech>
           <Tech>webpack 2</Tech>
           <Tech>webpack-bundle-analyzer</Tech>

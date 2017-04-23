@@ -1,3 +1,3 @@
-const selectTests = state => state.tests;
+const selectTests = state => state.get('tests');
 
 export { selectTests };

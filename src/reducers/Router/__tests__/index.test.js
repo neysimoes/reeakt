@@ -1,3 +1,4 @@
+import { fromJS } from 'immutable';
 import { LOCATION_CHANGE } from 'react-router-redux';
 import routerReducer from '~reducers/Router';
 
@@ -5,9 +6,9 @@ import routerReducer from '~reducers/Router';
 describe('routerReducer', () => {
   let state;
   beforeEach(() => {
-    state = {
+    state = fromJS({
       locationBeforeTransitions: null
-    };
+    });
   });
 
   it('should return the initial state', () => {
@@ -23,9 +24,9 @@ describe('routerReducer', () => {
         action: 'PUSH'
       }
     };
-    const expectedResult = {
+    const expectedResult = state.merge({
       locationBeforeTransitions: fixture.payload
-    };
+    });
 
     expect(routerReducer(state, fixture)).toEqual(expectedResult);
   });

@@ -1,3 +1,4 @@
+import { fromJS } from 'immutable';
 import testsReducer from '~reducers/Tests';
 import { getTests, getTestsSuccess, getTestsFailure } from '~reducers/Tests/actions';
 
@@ -5,11 +6,11 @@ import { getTests, getTestsSuccess, getTestsFailure } from '~reducers/Tests/acti
 describe('testsReducer', () => {
   let state;
   beforeEach(() => {
-    state = {
+    state = fromJS({
       isLoading: false,
       error: null,
       tests: {}
-    };
+    });
   });
 
   it('should return the initial state', () => {
@@ -18,33 +19,33 @@ describe('testsReducer', () => {
   });
 
   it('should handle the getTests action correctly', () => {
-    const expectedResult = {
+    const expectedResult = state.merge({
       isLoading: true,
       error: null,
       tests: {}
-    };
+    });
 
     expect(testsReducer(state, getTests())).toEqual(expectedResult);
   });
 
   it('should handle the getTestsSuccess action correctly', () => {
     const fixture = [{ test: 1 }];
-    const expectedResult = {
+    const expectedResult = state.merge({
       isLoading: false,
       error: null,
       tests: fixture
-    };
+    });
 
     expect(testsReducer(state, getTestsSuccess(fixture))).toEqual(expectedResult);
   });
 
   it('should handle the getTestsFailure action correctly', () => {
     const fixture = new Error('Something went wrong');
-    const expectedResult = {
+    const expectedResult = state.merge({
       isLoading: false,
       error: fixture,
       tests: {}
-    };
+    });
 
     expect(testsReducer(state, getTestsFailure(fixture))).toEqual(expectedResult);
   });

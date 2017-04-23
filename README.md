@@ -23,6 +23,8 @@
 - react-router v4
 - redux
 - redux-saga
+- immutable.js
+- redux-immutable
 - styled-components v2
 - webpack 2
 - webpack-bundle-analyzer
@@ -33,38 +35,38 @@
 - express
 
 ## Installation
-````
+```
 $ git clone https://github.com/obetomuniz/reeakt.git
-$ yarn install
-````
+$ npm install
+```
 
 ## CLI
 
 #### Run the Development Mode
-````
+```
 $ npm run dev
-````
+```
 
 #### Run the Production Mode
-````
+```
 $ npm run prod
-````
+```
 
 #### Build and Run the Production Server
-````
+```
 $ npm run build
 $ npm run start
-````
+```
 
 #### Run the tests
-````
+```
 $ npm run test
-````
+```
 
 #### Run the webpack-bundle-analyzer
-````
+```
 $ npm run webpack-bundle-analyzer
-````
+```
 
 ## License
 
