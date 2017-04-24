@@ -8,17 +8,12 @@ export const initialState = fromJS({
 });
 
 export default (state = initialState, action) => {
-  switch (action.type) {
-    case FETCH_TESTS_REQUEST:
-      return state.merge({ isLoading: true });
+  // Use this approach instead of switch case to avoid code complexity
+  const cases = {
+    [FETCH_TESTS_REQUEST]: () => state.merge({ isLoading: true }),
+    [FETCH_TESTS_SUCCESS]: () => state.merge({ isLoading: false, tests: action.payload.tests }),
+    [FETCH_TESTS_FAILURE]: () => state.merge({ isLoading: false, error: action.payload.error })
+  }[action.type];
 
-    case FETCH_TESTS_SUCCESS:
-      return state.merge({ isLoading: false, tests: action.payload.tests });
-
-    case FETCH_TESTS_FAILURE:
-      return state.merge({ isLoading: false, error: action.payload.error });
-
-    default:
-      return state;
-  }
+  return cases ? cases() : state;
 };

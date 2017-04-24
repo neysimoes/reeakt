@@ -6,10 +6,10 @@ const initialState = fromJS({
 });
 
 export default (state = initialState, action) => {
-  switch (action.type) {
-    case LOCATION_CHANGE:
-      return state.merge({ locationBeforeTransitions: action.payload });
-    default:
-      return state;
-  }
+  // Use this approach instead of switch case to avoid code complexity
+  const cases = {
+    [LOCATION_CHANGE]: () => state.merge({ locationBeforeTransitions: action.payload })
+  }[action.type];
+
+  return cases ? cases() : state;
 };

@@ -5,6 +5,15 @@ import createSagaMiddleware, { END } from 'redux-saga';
 import Reducers from '~reducers';
 import Sagas from '~sagas';
 
+function enableHMR(store) {
+  if (process.env.NODE_ENV === 'development' && module.hot) {
+    module.hot.accept('./reducers', () => {
+      const nextReducer = require('./reducers').default;
+      store.replaceReducer(nextReducer);
+    });
+  }
+}
+
 export default function configureStore(initialState, history) {
   const ReduxSagaMiddleware = createSagaMiddleware();
   const store = createStore(Reducers, fromJS(initialState), compose(
@@ -23,15 +32,6 @@ export default function configureStore(initialState, history) {
   store.runSaga(Sagas);
   store.close = () => store.dispatch(END);
 
-  /* istanbul ignore next */
-  if (process.env.NODE_ENV === 'development') {
-    if (module.hot) {
-      module.hot.accept('./reducers', () => {
-        const nextReducer = require('./reducers').default;
-        store.replaceReducer(nextReducer);
-      });
-    }
-  }
-
+  enableHMR(store);
   return store;
 }
