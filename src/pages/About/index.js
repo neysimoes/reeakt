@@ -18,6 +18,7 @@ const About = () => {
           <Tech>immutable.js</Tech>
           <Tech>redux-immutable</Tech>
           <Tech>styled-components v2</Tech>
+          <Tech>HMR <small>(Hot Module Reload)</small></Tech>
           <Tech>webpack 2</Tech>
           <Tech>webpack-bundle-analyzer</Tech>
           <Tech>jest & enzyme</Tech>
