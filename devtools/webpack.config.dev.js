@@ -8,7 +8,7 @@ const distPath = path.join(__dirname, '../', '/dist/');
 const devtoolsPath = path.join(__dirname, '../', '/devtools/');
 const webpackIsomorphicTools = new WebpackIsomorphicToolsPlugin(require('./isomorphictools.config'));
 
-module.exports = function (port) {
+module.exports = (port) => {
   return {
     devtool: 'inline-source-map',
     entry: {

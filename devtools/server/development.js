@@ -7,12 +7,9 @@ import webpackHotMiddleware from 'webpack-hot-middleware';
 import DashboardPlugin from 'webpack-dashboard/plugin';
 import detect from 'detect-port';
 
-const app = express();
-const host = process.env.HOST || 'localhost';
-const port = process.env.HOT_LOAD_PORT || 3000;
-
-
-function run (port) {
+function loadServer(port) {
+  const app = express();
+  const host = process.env.HOST || 'localhost';
   const compiler = webpack(webpackConfig(port));
   compiler.apply(new DashboardPlugin());
   const serverOptions = {
@@ -28,6 +25,7 @@ function run (port) {
     headers: { 'Access-Control-Allow-Origin': '*' },
     stats: { colors: true }
   };
+
   app.use(webpackDevMiddleware(compiler, serverOptions));
   app.use(webpackHotMiddleware(compiler));
   app.use('*', function (req, res, next) {
@@ -49,11 +47,8 @@ function run (port) {
   });
 }
 
-detect(port, (error, _port) => {
-  if (error) {
-    throw new Error(error)
-  }
+detect(process.env.HOT_LOAD_PORT || 3000, (error, port) => {
+  if (error) throw new Error(error)
 
-  run(_port)
+  loadServer(port)
 })
-
