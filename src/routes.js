@@ -2,13 +2,13 @@ import React from 'react';
 import Route from 'react-router-dom/Route';
 import Switch from 'react-router-dom/Switch';
 import { Layout } from '~components';
-import { Home, About, NotFound } from '~pages';
+import { Home, Docs, NotFound } from '~pages';
 
 export const routes = [{
   component: Layout,
   routes: [
     { path: '/', exact: true, component: Home },
-    { path: '/about', component: About },
+    { path: '/docs', component: Docs },
     { component: NotFound }
   ]
 }];

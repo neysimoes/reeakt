@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { NavLink } from 'react-router-dom';
 
-import { Wrapper, Nav, NavItem, NavLinkStyled, Logo, Content } from '~components/Layout/UI';
+import { Wrapper, Nav, NavItem, NavLinkStyled, Logo } from '~components/Layout/UI';
 
 describe('<Layout /> UI', () => {
   it('should render an <Wrapper> tag', () => {
@@ -28,10 +28,5 @@ describe('<Layout /> UI', () => {
   it('should render an <Logo> tag', () => {
     const renderedComponent = shallow(<Logo />);
     expect(renderedComponent.type()).toEqual('img');
-  });
-
-  it('should render an <Content> tag', () => {
-    const renderedComponent = shallow(<Content />);
-    expect(renderedComponent.type()).toEqual('section');
   });
 });

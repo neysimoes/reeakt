@@ -10,7 +10,7 @@ export const Content = styled.div`
   padding: 0 20px;
 `;
 
-export const AboutTitle = styled.h2`
+export const DocsTitle = styled.h2`
   font-size: 24px;
   margin-bottom: 20px;
   text-align: center;

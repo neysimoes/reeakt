@@ -1,13 +1,13 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import { Wrapper, Content, AboutTitle, Techs, Tech, CLI, CLILabel, CLICommand } from '~pages/About/UI';
+import { Wrapper, Content, DocsTitle, Techs, Tech, CLI, CLILabel, CLICommand } from '~pages/Docs/UI';
 
-const About = () => {
+const Docs = () => {
   return (
     <Wrapper>
       <Helmet title={'Docs - reeakt'} />
       <Content>
-        <AboutTitle>Support</AboutTitle>
+        <DocsTitle>Support</DocsTitle>
 
         <Techs>
           <Tech>SSR <small>(Server-Side Rendering)</small></Tech>
@@ -30,7 +30,7 @@ const About = () => {
       </Content>
 
       <Content>
-        <AboutTitle>Command Line Tools</AboutTitle>
+        <DocsTitle>Command Line Tools</DocsTitle>
 
         <CLI>
           <CLILabel>Run the Development Mode</CLILabel>
@@ -61,4 +61,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default Docs;

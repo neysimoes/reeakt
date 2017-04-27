@@ -13,7 +13,7 @@ const Layout = ({ route }) => (
         <NavLinkStyled exact activeClassName={'active'} to="/">reeakt</NavLinkStyled>
       </NavItem>
       <NavItem>
-        <NavLinkStyled exact activeClassName={'active'} to="/about">docs</NavLinkStyled>
+        <NavLinkStyled exact activeClassName={'active'} to="/docs">docs</NavLinkStyled>
       </NavItem>
     </Nav>
     <Logo src={logoSVG} alt={'reeakt logo'} />

@@ -1,8 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { Wrapper, Content, AboutTitle, Techs, Tech, CLI, CLILabel, CLICommand } from '~pages/About/UI';
+import { Wrapper, Content, DocsTitle, Techs, Tech, CLI, CLILabel, CLICommand } from '~pages/Docs/UI';
 
-describe('<About /> UI', () => {
+describe('<Docs /> UI', () => {
   it('should render an <Wrapper> tag', () => {
     const renderedComponent = shallow(<Wrapper />);
     expect(renderedComponent.type()).toEqual('div');
@@ -13,8 +13,8 @@ describe('<About /> UI', () => {
     expect(renderedComponent.type()).toEqual('div');
   });
 
-  it('should render an <AboutTitle> tag', () => {
-    const renderedComponent = shallow(<AboutTitle />);
+  it('should render an <DocsTitle> tag', () => {
+    const renderedComponent = shallow(<DocsTitle />);
     expect(renderedComponent.type()).toEqual('h2');
   });
 
