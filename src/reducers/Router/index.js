@@ -1,4 +1,5 @@
 import { fromJS } from 'immutable';
+import { createActions } from '~reducers';
 import { LOCATION_CHANGE } from 'react-router-redux';
 
 const initialState = fromJS({
@@ -6,10 +7,7 @@ const initialState = fromJS({
 });
 
 export default (state = initialState, action) => {
-  // Use this approach instead of switch case to avoid code complexity
-  const cases = {
+  return createActions({ state, action }, {
     [LOCATION_CHANGE]: () => state.merge({ locationBeforeTransitions: action.payload })
-  }[action.type];
-
-  return cases ? cases() : state;
+  });
 };
