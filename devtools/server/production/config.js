@@ -37,7 +37,7 @@ app.use((req, res) => {
   store.runSaga(rootSagas).done.then(() => {
     const body = renderToString(rootComp);
     const head = Helmet.rewind();
-    const styles = styleSheet.rules().map(rule => rule.cssText).join('\n');
+    const styles = styleSheet.getCSS();
 
     if (context.url) {
       res.redirect(302, context.url);
@@ -45,14 +45,13 @@ app.use((req, res) => {
     }
 
     res.render('index', {
-      styles: styles,
+      styles,
       title: head.title.toString(),
       meta: head.meta.toString(),
       link: head.link.toString(),
       script: head.script.toString(),
       body,
       state: JSON.stringify(store.getState()),
-      layout: false,
       assets: webpackIsomorphicTools.assets()
     });
   })

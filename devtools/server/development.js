@@ -7,7 +7,7 @@ import webpackHotMiddleware from 'webpack-hot-middleware';
 import DashboardPlugin from 'webpack-dashboard/plugin';
 import detect from 'detect-port';
 
-function loadServer(port) {
+function loadDevServer(port) {
   const app = express();
   const host = process.env.HOST || 'localhost';
   const compiler = webpack(webpackConfig(port));
@@ -50,5 +50,5 @@ function loadServer(port) {
 detect(process.env.HOT_LOAD_PORT || 3000, (error, port) => {
   if (error) throw new Error(error)
 
-  loadServer(port)
+  loadDevServer(port)
 })

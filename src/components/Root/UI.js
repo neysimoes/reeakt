@@ -22,8 +22,5 @@ injectGlobal`
   input::-ms-clear{display:none}input[type=number]{-moz-appearance:textfield}
   input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{appearance:none}
   svg{display:inline-flex}img{display:block}
-  body { -webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale; }
-  body {
-    font-family: Montserrat-Regular;
-  }
+  body{-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;font-family: Montserrat-Regular;}
 `;

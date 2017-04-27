@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Wrapper, Nav, NavItem, NavLinkStyled, Logo, Content } from '~components/Layout/UI';
+import { Wrapper, Nav, NavItem, NavLinkStyled, Logo } from '~components/Layout/UI';
 import { renderRoutes } from '../../routes';
 
 // Assets
@@ -17,9 +17,9 @@ const Layout = ({ route }) => (
       </NavItem>
     </Nav>
     <Logo src={logoSVG} alt={'reeakt logo'} />
-    <Content>
+    <section>
       {renderRoutes(route.routes)}
-    </Content>
+    </section>
   </Wrapper>
 );
 

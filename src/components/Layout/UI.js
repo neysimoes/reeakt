@@ -34,7 +34,3 @@ export const Logo = styled.img`
   margin-bottom: 40px;
   width: 100%;
 `;
-
-export const Content = styled.section`
-
-`;
