@@ -1,11 +1,14 @@
 import path from 'path';
 import express from 'express';
+import detect from 'detect-port';
 import webpack from 'webpack';
-import webpackConfig from '../webpack.config.dev';
+import webpackConfig from './webpack.config';
 import webpackDevMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
 import DashboardPlugin from 'webpack-dashboard/plugin';
-import detect from 'detect-port';
+import React from 'react';
+import { renderToString, renderToStaticMarkup } from 'react-dom/server';
+import Html from '~components/Html';
 
 function loadDevServer(port) {
   const app = express();
@@ -29,15 +32,9 @@ function loadDevServer(port) {
   app.use(webpackDevMiddleware(compiler, serverOptions));
   app.use(webpackHotMiddleware(compiler));
   app.use('*', function (req, res, next) {
-    const filename = path.join(compiler.outputPath, 'index.html');
-    console.log(filename)
-    compiler.outputFileSystem.readFile(filename, function(err, result){
-      if (err) return next(err);
-
       res.set('content-type','text/html');
-      res.send(result);
+      res.send(`<!doctype html>${renderToStaticMarkup(<Html assets={webpackIsomorphicTools.assets()} />)}`);
       res.end();
-    });
   });
 
   app.listen(port, (err) => {

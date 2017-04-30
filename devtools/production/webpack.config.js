@@ -3,12 +3,12 @@ const webpack = require('webpack');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const WebpackIsomorphicToolsPlugin = require('webpack-isomorphic-tools/plugin');
 
-const srcPath = path.join(__dirname, '../', '/src/');
-const distPath = path.join(__dirname, '../', '/dist/');
-const webpackIsomorphicTools = new WebpackIsomorphicToolsPlugin(require('./isomorphictools.config'));
+const srcPath = path.join(__dirname, '../', '../', '/src/');
+const distPath = path.join(__dirname, '../', '../', '/dist/');
+const webpackIsomorphicTools = new WebpackIsomorphicToolsPlugin(require('../isomorphictools.config'));
 
 module.exports = {
-  context: path.join(__dirname, '..'),
+  context: path.join(__dirname, '..', '..'),
   entry: {
     main: [
       'babel-polyfill',

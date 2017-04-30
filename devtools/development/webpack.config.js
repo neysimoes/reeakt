@@ -1,12 +1,10 @@
 const path = require('path');
 const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackIsomorphicToolsPlugin = require('webpack-isomorphic-tools/plugin');
 
-const srcPath = path.join(__dirname, '../', '/src/');
-const distPath = path.join(__dirname, '../', '/dist/');
-const devtoolsPath = path.join(__dirname, '../', '/devtools/');
-const webpackIsomorphicTools = new WebpackIsomorphicToolsPlugin(require('./isomorphictools.config'));
+const srcPath = path.join(__dirname, '../', '../', '/src/');
+const distPath = path.join(__dirname, '../', '../', '/dist/');
+const webpackIsomorphicTools = new WebpackIsomorphicToolsPlugin(require('../isomorphictools.config'));
 
 module.exports = (port) => {
   return {
@@ -77,20 +75,9 @@ module.exports = (port) => {
           loader: 'url-loader',
           options: { limit: 8192, name: 'fonts/[name].[ext]' }
         }]
-      }, {
-        test: /\.hbs$/,
-        include: devtoolsPath,
-        use: [{ loader: 'handlebars-loader' }]
       }]
     },
     plugins: [
-      new HtmlWebpackPlugin({
-        title: 'reeakt',
-        isWebpack: true,
-        hash: true,
-        template: devtoolsPath + 'templates/index.hbs',
-        filename: distPath + 'index.html'
-      }),
       new webpack.HotModuleReplacementPlugin(),
       new webpack.DefinePlugin({
         'process.env': { 'NODE_ENV': JSON.stringify('development') }
