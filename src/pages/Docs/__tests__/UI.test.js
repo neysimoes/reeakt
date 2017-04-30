@@ -5,7 +5,7 @@ import { Wrapper, Content, DocsTitle, Techs, Tech, CLI, CLILabel, CLICommand } f
 describe('<Docs /> UI', () => {
   it('should render an <Wrapper> tag', () => {
     const renderedComponent = shallow(<Wrapper />);
-    expect(renderedComponent.type()).toEqual('div');
+    expect(renderedComponent.type()).toEqual('section');
   });
 
   it('should render an <Content> tag', () => {

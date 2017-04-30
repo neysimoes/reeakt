@@ -5,7 +5,7 @@ import { Slogan, Demos, Demo, DemoLabel, DemoImage } from '~pages/Home/UI';
 describe('<Home /> UI', () => {
   it('should render an <Slogan> tag', () => {
     const renderedComponent = shallow(<Slogan />);
-    expect(renderedComponent.type()).toEqual('p');
+    expect(renderedComponent.type()).toEqual('h2');
   });
 
   it('should render an <Demos> tag', () => {

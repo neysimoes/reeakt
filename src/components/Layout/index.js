@@ -8,18 +8,22 @@ import logoSVG from '~assets/images/vectors/logo-reeakt.svg';
 
 const Layout = ({ route }) => (
   <Wrapper>
-    <Nav>
-      <NavItem>
-        <NavLinkStyled exact activeClassName={'active'} to="/">reeakt</NavLinkStyled>
-      </NavItem>
-      <NavItem>
-        <NavLinkStyled exact activeClassName={'active'} to="/docs">docs</NavLinkStyled>
-      </NavItem>
-    </Nav>
-    <Logo src={logoSVG} alt={'reeakt logo'} />
-    <section>
+    <header>
+      <nav>
+        <Nav>
+          <NavItem>
+            <NavLinkStyled exact activeClassName={'active'} to="/">reeakt</NavLinkStyled>
+          </NavItem>
+          <NavItem>
+            <NavLinkStyled exact activeClassName={'active'} to="/docs">docs</NavLinkStyled>
+          </NavItem>
+        </Nav>
+      </nav>
+      <figure><Logo src={logoSVG} alt={'reeakt logo'} /></figure>
+    </header>
+    <div>
       {renderRoutes(route.routes)}
-    </section>
+    </div>
   </Wrapper>
 );
 

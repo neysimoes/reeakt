@@ -8,7 +8,7 @@ import logoJPG from '~assets/images/logo-reeakt.jpg';
 import testGIF from '~assets/images/test.gif';
 
 const Home = () => (
-  <div>
+  <section>
     <Helmet title={'reeakt'} />
     <Slogan>A React.js boilerplate to awesome web applications</Slogan>
     <Demos>
@@ -29,7 +29,7 @@ const Home = () => (
         <div><Tests /></div>
       </Demo>
     </Demos>
-  </div>
+  </section>
 );
 
 export default Home;

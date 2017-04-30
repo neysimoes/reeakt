@@ -4,10 +4,10 @@ import { NotFoundTitle } from '~pages/NotFound/UI';
 
 const NotFound = () => {
   return (
-    <div>
+    <section>
       <Helmet title={'404 not found - reeakt'} />
       <NotFoundTitle>Oops... 404 Page!</NotFoundTitle>
-    </div>
+    </section>
   );
 };
 

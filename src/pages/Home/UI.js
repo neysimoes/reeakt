@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Slogan = styled.p`
+export const Slogan = styled.h2`
   text-align: center;
   font-size: 28px;
   margin-bottom: 80px;
