@@ -7,20 +7,19 @@ import { Provider } from 'react-redux';
 import Helmet from 'react-helmet';
 import StaticRouter from 'react-router-dom/StaticRouter';
 import rootSagas from '~sagas';
+import Html from '~components/Html';
 import { routes, renderRoutes } from '../../src/routes';
 import configureStore from '../../src/store';
-import Html from '~components/Html';
 
 const app = express();
 const host = process.env.HOST || 'localhost';
-const port = (process.env.NODE_ENV === 'development') ? process.env.DEV_PORT || 3001 : process.env.PORT || 8080;
+const port = process.env.PORT || 8080;
 
 app.use(express.static(path.join(__dirname, '../', '../', 'dist')));
 const server = new http.Server(app);
 
 app.use((req, res) => {
   const store = configureStore({});
-
   const context = {};
   const component = (
     <Provider store={store}>
@@ -36,9 +35,9 @@ app.use((req, res) => {
       return;
     }
 
-    // res.set('content-type','text/html');
+    res.set('content-type','text/html');
     res.send(`<!doctype html>${renderToStaticMarkup(<Html component={component} assets={webpackIsomorphicTools.assets()} store={store} />)}`);
-    // res.end();
+    res.end();
   })
   .catch(e => console.log(e));
 

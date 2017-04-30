@@ -24,7 +24,7 @@ const Layout = ({ route }) => (
 );
 
 Layout.propTypes = {
-  route: PropTypes.object.isRequired,
+  route: PropTypes.object.isRequired
 };
 
 export default Layout;

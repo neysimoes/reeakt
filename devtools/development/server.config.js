@@ -32,11 +32,10 @@ function loadDevServer(port) {
   app.use(webpackDevMiddleware(compiler, serverOptions));
   app.use(webpackHotMiddleware(compiler));
   app.use('*', function (req, res, next) {
-      res.set('content-type','text/html');
-      res.send(`<!doctype html>${renderToStaticMarkup(<Html assets={webpackIsomorphicTools.assets()} />)}`);
-      res.end();
+    res.set('content-type','text/html');
+    res.send(`<!doctype html>${renderToStaticMarkup(<Html assets={webpackIsomorphicTools.assets()} />)}`);
+    res.end();
   });
-
   app.listen(port, (err) => {
     if (err) console.error(`Error: ${err}`);
 
@@ -44,7 +43,7 @@ function loadDevServer(port) {
   });
 }
 
-detect(process.env.HOT_LOAD_PORT || 3000, (error, port) => {
+detect(3000, (error, port) => {
   if (error) throw new Error(error)
 
   loadDevServer(port)

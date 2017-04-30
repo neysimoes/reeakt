@@ -3,12 +3,13 @@ import { renderToString } from 'react-dom/server';
 import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
 import serialize from 'serialize-javascript';
-import styleSheet from 'styled-components/lib/models/StyleSheet';
+import { ServerStyleSheet } from 'styled-components';
 
 const Html = ({ assets, component, store }) => {
-  const body = component ? renderToString(component) : '';
   const head = Helmet.rewind();
-
+  const sheet = new ServerStyleSheet();
+  const body = component ? renderToString(component) : '';
+  sheet.collectStyles(body);
   return (
     <html lang="en-US">
       <head>
@@ -28,7 +29,7 @@ const Html = ({ assets, component, store }) => {
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
         <meta name="apple-mobile-web-app-title" content="reeakt" />
         <meta name="theme-color" content="#303F9F" />
-        <style>{styleSheet.getCSS()}</style>
+        {sheet.getStyleElement()}
       </head>
       <body>
         <div id="container" dangerouslySetInnerHTML={{ __html: body }} />

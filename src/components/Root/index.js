@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
 import { ConnectedRouter } from 'react-router-redux';
-import '~components/Root/UI';
 import { routes, renderRoutes } from '../../routes';
 
 const Root = ({ store, history }) => (
