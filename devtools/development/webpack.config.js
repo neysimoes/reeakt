@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const WebpackIsomorphicToolsPlugin = require('webpack-isomorphic-tools/plugin');
 
 const srcPath = path.join(__dirname, '../', '../', '/src/');
@@ -40,14 +41,11 @@ module.exports = (port) => {
           loader: 'url-loader',
           options: { limit: 8192, name: 'images/[name].[ext]' }
         }, {
-          loader: 'image-webpack-loader',
-          options: {
-            mozjpeg: { progressive: true },
-            gifsicle: { interlaced: false },
-            optipng: { optimizationLevel: 4 },
-            pngquant: { quality: '75-90', speed: 3 }
-          }
+          loader: 'img-loader'
         }]
+      }, {
+        test: /\.css$/,
+        use: ExtractTextPlugin.extract({ fallback: "style-loader", use: "css-loader" })
       }, {
         test: /\.svg$/,
         include: srcPath,
@@ -55,12 +53,7 @@ module.exports = (port) => {
           loader: 'url-loader',
           options: { limit: 8192, name: 'svg/[name].[ext]', mimetype: 'image/svg+xml' }
         }, {
-          loader: 'image-webpack-loader',
-          options: {
-            svgo: {
-              plugins: [{ removeUselessDefs: false }, { removeTitle: true }, { removeRasterImages: true }, { sortAttrs: true }]
-            }
-          }
+          loader: 'img-loader'
         }]
       }, {
         test: /\.svg(\?[\s\S]+)?$/,
@@ -82,6 +75,7 @@ module.exports = (port) => {
       new webpack.DefinePlugin({
         'process.env': { 'NODE_ENV': JSON.stringify('development') }
       }),
+      new ExtractTextPlugin("styles.css"),
       webpackIsomorphicTools.development()
     ],
     resolve: {

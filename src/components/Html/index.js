@@ -29,6 +29,7 @@ const Html = ({ assets, component, store }) => {
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
         <meta name="apple-mobile-web-app-title" content="reeakt" />
         <meta name="theme-color" content="#303F9F" />
+        {assets.styles && <link rel="stylesheet" href={assets.styles.main}/>}
         {sheet.getStyleElement()}
       </head>
       <body>
