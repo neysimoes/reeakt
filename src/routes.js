@@ -17,9 +17,13 @@ export const renderRoutes = (routesList) => {
   const list = routesList ? (
     <Switch>
       {routesList.map((route, i) => (
-        <Route key={i} path={route.path} exact={route.exact} strict={route.strict}>
-          <route.component route={route} />
-        </Route>
+        <Route
+          key={i}
+          path={route.path}
+          exact={route.exact}
+          strict={route.strict}
+          render={props => <route.component {...props} route={route} />}
+        />
       ))}
     </Switch>
   ) : null;
