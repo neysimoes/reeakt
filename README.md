@@ -65,7 +65,7 @@ $ npm run test
 
 #### Run the webpack-bundle-analyzer
 ```
-$ npm run webpack-bundle-analyzer
+$ npm run bundle-analyzer
 ```
 
 ## License
