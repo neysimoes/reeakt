@@ -2,7 +2,7 @@ import React from 'react';
 import { renderToString } from 'react-dom/server';
 import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
-import serialize from 'serialize-javascript';
+import CircularJSON from 'circular-json';
 import { ServerStyleSheet } from 'styled-components';
 
 const Html = ({ assets, component, store }) => {
@@ -34,7 +34,7 @@ const Html = ({ assets, component, store }) => {
       </head>
       <body>
         <div id="container" dangerouslySetInnerHTML={{ __html: body }} />
-        {store && <script dangerouslySetInnerHTML={{ __html: `window.__INITIAL_STATE__=${serialize(store.getState())};` }} charSet="UTF-8"/>}
+        {store && <script dangerouslySetInnerHTML={{ __html: `window.__INITIAL_STATE__=${CircularJSON.stringify(store.getState())};` }} charSet="UTF-8"/>}
         {assets.javascript && <script src={assets.javascript.vendor} charSet="UTF-8" />}
         {assets.javascript && <script src={assets.javascript.main} charSet="UTF-8" />}
       </body>

@@ -53,8 +53,8 @@ const Docs = () => {
         </CLI>
 
         <CLI>
-          <CLILabel>Run the webpack-bundle-analyzer</CLILabel>
-          <CLICommand>$ npm run webpack-bundle-analyzer</CLICommand>
+          <CLILabel>Run the bundle-analyzer</CLILabel>
+          <CLICommand>$ npm run bundle-analyzer</CLICommand>
         </CLI>
       </Content>
     </Wrapper>
