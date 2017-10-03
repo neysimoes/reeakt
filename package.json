@@ -26,7 +26,7 @@
     "redux-immutable",
     "styled-components-v2",
     "hot-module-reload",
-    "webpack2",
+    "webpack3",
     "webpack-bundle-analyzer",
     "webpack-dashboard",
     "jest",

@@ -19,7 +19,7 @@ const Docs = () => {
           <Tech>redux-immutable</Tech>
           <Tech>styled-components v2</Tech>
           <Tech>HMR <small>(Hot Module Reload)</small></Tech>
-          <Tech>webpack 2</Tech>
+          <Tech>webpack 3</Tech>
           <Tech>webpack-bundle-analyzer</Tech>
           <Tech>jest & enzyme</Tech>
           <Tech>eslint</Tech>

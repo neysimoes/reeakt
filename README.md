@@ -26,7 +26,7 @@
 - immutable.js
 - redux-immutable
 - styled-components v2
-- webpack 2
+- webpack 3
 - webpack-bundle-analyzer
 - jest & enzyme
 - eslint
