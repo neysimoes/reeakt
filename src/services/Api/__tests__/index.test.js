@@ -6,7 +6,7 @@ describe('#getTestsEndpoint() using async/await', () => {
   it('Should return data from response', async () => {
     const mockAdapter = new MockAdapter(axios);
 
-    mockAdapter.onGet('https://count.donreach.com/?url=http://github.com').reply(200, {
+    mockAdapter.onGet('https://jsonplaceholder.typicode.com/photos/1').reply(200, {
       tests: [{test: 1}]
     });
 
