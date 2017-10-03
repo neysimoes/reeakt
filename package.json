@@ -52,12 +52,17 @@
       "!<rootDir>/node_modules/",
       "!<rootDir>/devtools/"
     ],
+    "setupFiles": [
+      "<rootDir>/devtools/jest/shim.js",
+      "<rootDir>/devtools/jest/setup.js"
+    ],
     "moduleNameMapper": {
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/devtools/jest/file.js"
     }
   },
   "dependencies": {
     "axios": "^0.16.2",
+    "enzyme-adapter-react-16": "^1.0.1",
     "express": "^4.16.1",
     "immutable": "^4.0.0-rc.4",
     "prop-types": "^15.6.0",
